@@ -168,7 +168,7 @@ footer{padding:48px 20px 32px;text-align:center;border-top:1px solid var(--borde
 .footer-text a{color:var(--blue);text-decoration:none;}
 
 /* FADE IN */
-.fade-in{opacity:0;transform:translateY(24px);transition:opacity .6s ease,transform .6s ease;}
+.fade-in{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease;}
 .fade-in.visible{opacity:1;transform:translateY(0);}
 
 /* RESPONSIVE */
@@ -552,7 +552,7 @@ footer{padding:48px 20px 32px;text-align:center;border-top:1px solid var(--borde
         <li><span class="check">❌</span> ML Predictions</li>
         <li><span class="check">❌</span> Prescriptive AI</li>
       </ul>
-      <a href="mailto:pankaj@1clickdataanalysis.com?subject=Starter Plan Enquiry" class="price-btn price-btn-outline">Get Started →</a>
+      <a href="/cdn-cgi/l/email-protection#f484959a9f959eb4c597989d979f90958095959a95988d879d87da979b99cb8781969e919780c9a7809586809186d4a498959ad4b19a85819d868d" class="price-btn price-btn-outline">Get Started →</a>
     </div>
     <div class="price-card popular">
       <div class="popular-tag">⭐ Most Popular</div>
@@ -569,7 +569,7 @@ footer{padding:48px 20px 32px;text-align:center;border-top:1px solid var(--borde
         <li><span class="check">✅</span> ML Predictions</li>
         <li><span class="check">✅</span> Prescriptive AI</li>
       </ul>
-      <a href="mailto:pankaj@1clickdataanalysis.com?subject=Business Plan Enquiry" class="price-btn price-btn-filled">Get Started →</a>
+      <a href="/cdn-cgi/l/email-protection#bacadbd4d1dbd0fa8bd9d6d3d9d1dedbcedbdbd4dbd6c3c9d3c994d9d5d785c9cfd8d0dfd9ce87f8cfc9d3d4dfc9c99aead6dbd49affd4cbcfd3c8c3" class="price-btn price-btn-filled">Get Started →</a>
     </div>
     <div class="price-card">
       <div class="price-plan">Enterprise</div>
@@ -585,7 +585,7 @@ footer{padding:48px 20px 32px;text-align:center;border-top:1px solid var(--borde
         <li><span class="check">✅</span> SLA guarantee</li>
         <li><span class="check">✅</span> Dedicated account manager</li>
       </ul>
-      <a href="mailto:pankaj@1clickdataanalysis.com?subject=Enterprise Plan Enquiry" class="price-btn price-btn-outline">Contact Us →</a>
+      <a href="/cdn-cgi/l/email-protection#dfafbeb1b4beb59feebcb3b6bcb4bbbeabbebeb1beb3a6acb6acf1bcb0b2e0acaabdb5babcabe29ab1abbaadafadb6acbaff8fb3beb1ff9ab1aeaab6ada6" class="price-btn price-btn-outline">Contact Us →</a>
     </div>
   </div>
 </section>
@@ -600,7 +600,7 @@ footer{padding:48px 20px 32px;text-align:center;border-top:1px solid var(--borde
       <input class="contact-input" id="emailInput" type="email" placeholder="your@company.com">
       <button class="contact-btn" onclick="bookDemo()">Book Free Demo →</button>
     </div>
-    <p style="font-size:.78rem;color:#334155;margin-top:16px;">Or email directly: <a href="mailto:pankaj@1clickdataanalysis.com" style="color:#0ea5e9;">pankaj@1clickdataanalysis.com</a></p>
+    <p style="font-size:.78rem;color:#334155;margin-top:16px;">Or email directly: <a href="/cdn-cgi/l/email-protection#e292838c898388a2d3818e8b818986839683838c838e9b918b91cc818d8f" style="color:#0ea5e9;"><span class="__cf_email__" data-cfemail="8cfcede2e7ede6ccbdefe0e5efe7e8edf8edede2ede0f5ffe5ffa2efe3e1">[email&#160;protected]</span></a></p>
   </div>
 </section>
 
@@ -619,25 +619,13 @@ footer{padding:48px 20px 32px;text-align:center;border-top:1px solid var(--borde
     <div class="footer-logo-text">1 Click Data Analysis</div>
     <div style="font-size:.7rem;color:#1e3a5f;letter-spacing:.15em;text-transform:uppercase;">Anyone Can Do Data Analysis</div>
   </div>
-  <p class="footer-text">Built by <strong>Pankaj Kumar Das</strong> &nbsp;·&nbsp; <a href="mailto:pankaj@1clickdataanalysis.com">pankaj@1clickdataanalysis.com</a> &nbsp;·&nbsp; © 2025 All rights reserved</p>
+  <p class="footer-text">Built by <strong>Pankaj Kumar Das</strong> &nbsp;·&nbsp; <a href="/cdn-cgi/l/email-protection#077766696c666d4736646b6e646c636673666669666b7e746e742964686a"><span class="__cf_email__" data-cfemail="4838292623292208792b24212b232c293c2929262924313b213b662b2725">[email&#160;protected]</span></a> &nbsp;·&nbsp; © 2025 All rights reserved</p>
   <p style="font-size:.75rem;color:#334155;margin-top:8px;">Powered by AI · Made in India 🇮🇳</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+// Make all content visible immediately on load
+document.querySelectorAll(".fade-in").forEach(el => el.classList.add("visible"));
+
 const observer = new IntersectionObserver((entries) => {
-  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(() => e.target.classList.add('visible'), i*80); } });
-}, {threshold:0.1});
-document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
-
-function bookDemo(){
-  const email = document.getElementById('emailInput').value;
-  if(!email || !email.includes('@')){ alert('Please enter a valid email address.'); return; }
-  window.location.href = `mailto:pankaj@1clickdataanalysis.com?subject=Demo Request from ${email}&body=Hi Pankaj,%0D%0A%0D%0AI would like to book a free demo.%0D%0A%0D%0AMy email: ${email}`;
-}
-
-window.addEventListener('scroll', () => {
-  document.querySelector('nav').style.background = window.scrollY > 50 ? 'rgba(4,8,16,0.97)' : 'rgba(4,8,16,0.85)';
-});
-</script>
-</body>
-</html>
+  entries.forEach((e,i) => { if(e.isIntersecting){ setTimeout(() => e.target.classList.add('visible'), i*8<!-- animation patch removed, content always visible -->
