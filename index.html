@@ -579,7 +579,18 @@ footer{
 
 <!-- ── NAV ──────────────────────────────────────────────────────── -->
 <nav>
-  <div class="logo">1Click<span>Data</span></div>
+  <div class="logo" style="display:flex;align-items:center;gap:10px;">
+    <svg width="36" height="32" viewBox="0 0 180 160" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="ng1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+      <polygon points="90,4 158,44 158,124 90,164 22,124 22,44" fill="none" stroke="url(#ng1)" stroke-width="6" opacity="0.5"/>
+      <polyline points="38,110 58,80 78,90 108,50 138,34" fill="none" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="138" cy="34" r="10" fill="#38bdf8"/>
+      <rect x="38" y="120" width="12" height="20" rx="3" fill="#34d399" opacity="0.6"/>
+      <rect x="56" y="110" width="12" height="30" rx="3" fill="#34d399" opacity="0.8"/>
+      <text x="90" y="108" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="52" fill="url(#ng1)" font-weight="900">1</text>
+    </svg>
+    <span style="font-family:'Clash Display',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:-.02em;background:linear-gradient(135deg,#0ea5e9,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">1Click<span style="-webkit-text-fill-color:#ffffff;">Data</span></span>
+  </div>
   <ul class="nav-links">
     <li><a href="#features">Features</a></li>
     <li><a href="#industries">Industries</a></li>
@@ -593,6 +604,88 @@ footer{
 <!-- ── HERO ─────────────────────────────────────────────────────── -->
 <section class="hero">
   <div class="hero-inner">
+
+    <!-- HERO LOGO -->
+    <div style="display:flex;flex-direction:column;align-items:center;gap:16px;margin-bottom:32px;">
+      <svg width="140" height="124" viewBox="0 0 200 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <linearGradient id="hg1" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#0ea5e9"/>
+            <stop offset="100%" stop-color="#a78bfa"/>
+          </linearGradient>
+          <filter id="hglow">
+            <feGaussianBlur stdDeviation="4" result="blur"/>
+            <feMerge><feMergeNode in="blur"/><feMergeNode in="SourceGraphic"/></feMerge>
+          </filter>
+        </defs>
+        <!-- Outer hex -->
+        <polygon points="100,6 170,46 170,130 100,170 30,130 30,46" fill="none" stroke="url(#hg1)" stroke-width="1.5" opacity="0.25"/>
+        <polygon points="100,18 158,52 158,124 100,158 42,124 42,52" fill="none" stroke="#0ea5e9" stroke-width="1" opacity="0.12"/>
+        <!-- Glow -->
+        <circle cx="100" cy="88" r="38" fill="#0ea5e9" opacity="0.05"/>
+        <!-- "1" -->
+        <text x="100" y="107" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="52" fill="url(#hg1)" font-weight="900" filter="url(#hglow)">1</text>
+        <!-- Trend line top-right -->
+        <g transform="translate(128,14)">
+          <text x="0" y="9" font-family="DM Sans" font-size="7" fill="#334155" letter-spacing="1">TREND</text>
+          <polyline points="0,26 11,18 22,21 33,12 44,8" fill="none" stroke="#0ea5e9" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="44" cy="8" r="3.5" fill="#38bdf8" filter="url(#hglow)"/>
+        </g>
+        <!-- Bar chart bottom-right -->
+        <g transform="translate(134,108)">
+          <text x="0" y="8" font-family="DM Sans" font-size="7" fill="#334155" letter-spacing="1">BAR</text>
+          <rect x="0"  y="12" width="8" height="15" rx="2" fill="#34d399" opacity="0.45"/>
+          <rect x="11" y="9"  width="8" height="18" rx="2" fill="#34d399" opacity="0.7"/>
+          <rect x="22" y="4"  width="8" height="23" rx="2" fill="#34d399"/>
+          <rect x="33" y="11" width="8" height="16" rx="2" fill="#34d399" opacity="0.55"/>
+        </g>
+        <!-- Pie bottom-left -->
+        <g transform="translate(12,106)">
+          <text x="0" y="8" font-family="DM Sans" font-size="7" fill="#334155" letter-spacing="1">PIE</text>
+          <path d="M22,27 L22,9 A18,18 0 0,1 38,36 Z"  fill="#a78bfa" opacity="0.9"/>
+          <path d="M22,27 L38,36 A18,18 0 0,1 6,37 Z"   fill="#8b5cf6" opacity="0.7"/>
+          <path d="M22,27 L6,37  A18,18 0 0,1 22,9 Z"   fill="#7c3aed" opacity="0.4"/>
+          <circle cx="22" cy="27" r="8" fill="#040810"/>
+        </g>
+        <!-- Funnel top-left -->
+        <g transform="translate(10,14)">
+          <text x="0" y="9" font-family="DM Sans" font-size="7" fill="#334155" letter-spacing="1">FUNNEL</text>
+          <line x1="0"  y1="17" x2="40" y2="17" stroke="#fb923c" stroke-width="3" stroke-linecap="round"/>
+          <line x1="6"  y1="25" x2="34" y2="25" stroke="#fb923c" stroke-width="2.4" stroke-linecap="round" opacity="0.75"/>
+          <line x1="11" y1="33" x2="29" y2="33" stroke="#fb923c" stroke-width="1.8" stroke-linecap="round" opacity="0.5"/>
+          <line x1="15" y1="41" x2="25" y2="41" stroke="#fb923c" stroke-width="1.2" stroke-linecap="round" opacity="0.32"/>
+        </g>
+        <!-- Scatter left -->
+        <g transform="translate(4,70)">
+          <text x="0" y="9" font-family="DM Sans" font-size="7" fill="#334155" letter-spacing="1">SCATTER</text>
+          <circle cx="4"  cy="33" r="2.8" fill="#ec4899" opacity="0.5"/>
+          <circle cx="11" cy="27" r="2.2" fill="#ec4899" opacity="0.65"/>
+          <circle cx="18" cy="21" r="3.2" fill="#ec4899" opacity="0.8"/>
+          <circle cx="25" cy="16" r="2.6" fill="#f472b6"/>
+          <circle cx="32" cy="12" r="3.8" fill="#f472b6" filter="url(#hglow)"/>
+          <line x1="2" y1="35" x2="34" y2="10" stroke="#ec4899" stroke-width="1" stroke-dasharray="2,2" opacity="0.4"/>
+        </g>
+      </svg>
+
+      <!-- Brand Name under icon -->
+      <div style="text-align:center;">
+        <div style="font-family:'Clash Display',sans-serif;font-size:2rem;font-weight:700;letter-spacing:-.03em;line-height:1;">
+          <span style="background:linear-gradient(135deg,#0ea5e9,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">1Click</span>
+          <span style="color:#ffffff;"> Data</span>
+          <span style="color:#334155;font-size:1.3rem;"> Analysis</span>
+        </div>
+        <!-- Badge pills -->
+        <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-top:12px;">
+          <span style="font-size:.65rem;font-weight:600;padding:3px 10px;border-radius:100px;background:#0ea5e912;color:#38bdf8;border:1px solid #0ea5e930;">No Code</span>
+          <span style="font-size:.65rem;font-weight:600;padding:3px 10px;border-radius:100px;background:#a78bfa12;color:#c4b5fd;border:1px solid #8b5cf630;">No Training</span>
+          <span style="font-size:.65rem;font-weight:600;padding:3px 10px;border-radius:100px;background:#34d39912;color:#6ee7b7;border:1px solid #10b98130;">Just Upload</span>
+          <span style="font-size:.65rem;font-weight:600;padding:3px 10px;border-radius:100px;background:#fb923c12;color:#fdba74;border:1px solid #f9731630;">Insights in 60s</span>
+          <span style="font-size:.65rem;font-weight:600;padding:3px 10px;border-radius:100px;background:#f472b612;color:#f9a8d4;border:1px solid #ec489930;">Pattern · Predict · Prescribe</span>
+          <span style="font-size:.65rem;font-weight:600;padding:3px 10px;border-radius:100px;background:#fbbf2412;color:#fde68a;border:1px solid #f59e0b30;">Model Training</span>
+        </div>
+      </div>
+    </div>
+
     <div class="badge">
       <span class="badge-dot"></span>
       AI-Powered · No Coding Required · Any Domain
@@ -937,7 +1030,7 @@ footer{
         <li><span class="check">✓</span> PDF export</li>
         <li><span class="check">✓</span> Email support</li>
       </ul>
-      <a href="mailto:pankajkxyz2018@gmail.com?subject=Starter Plan Enquiry" class="price-btn price-btn-outline">Get Started</a>
+      <a href="/cdn-cgi/l/email-protection#6e1e0f00050f04051617145c5e5f562e09030f0702400d0103511d1b0c040b0d1a533d1a0f1c1a0b1c4e3e020f004e2b001f1b071c17" class="price-btn price-btn-outline">Get Started</a>
     </div>
 
     <div class="price-card featured">
@@ -953,7 +1046,7 @@ footer{
         <li><span class="check">✓</span> Calculated columns engine</li>
         <li><span class="check">✓</span> Priority support</li>
       </ul>
-      <a href="mailto:pankajkxyz2018@gmail.com?subject=Business Plan Enquiry" class="price-btn price-btn-primary">Start Free Trial</a>
+      <a href="/cdn-cgi/l/email-protection#c2b2a3aca9a3a8a9babbb8f0f2f3fa82a5afa3abaeeca1adaffdb1b7a0a8a7a1b6ff80b7b1abaca7b1b1e292aea3ace287acb3b7abb0bb" class="price-btn price-btn-primary">Start Free Trial</a>
     </div>
 
     <div class="price-card">
@@ -968,7 +1061,7 @@ footer{
         <li><span class="check">✓</span> Fraud Shield module</li>
         <li><span class="check">✓</span> Dedicated support + SLA</li>
       </ul>
-      <a href="mailto:pankajkxyz2018@gmail.com?subject=Enterprise Plan Enquiry" class="price-btn price-btn-outline">Contact Sales</a>
+      <a href="/cdn-cgi/l/email-protection#91e1f0fffaf0fbfae9e8eba3a1a0a9d1f6fcf0f8fdbff2fefcaee2e4f3fbf4f2e5acd4ffe5f4e3e1e3f8e2f4b1c1fdf0ffb1d4ffe0e4f8e3e8" class="price-btn price-btn-outline">Contact Sales</a>
     </div>
   </div>
 </section>
@@ -985,18 +1078,30 @@ footer{
     </div>
     <p style="font-size:.78rem;color:var(--muted);margin-top:16px">
       Or email directly: 
-      <a href="mailto:pankajkxyz2018@gmail.com" 
-         style="color:var(--blue)">pankajkxyz2018@gmail.com</a>
+      <a href="/cdn-cgi/l/email-protection#93e3f2fdf8f2f9f8ebeae9a1a3a2abd3f4fef2faffbdf0fcfe" style="color:var(--blue)"><span class="__cf_email__" data-cfemail="a0d0c1cecbc1cacbd8d9da92909198e0c7cdc1c9cc8ec3cfcd">[email&#160;protected]</span></a>
     </p>
   </div>
 </section>
 
 <!-- ── FOOTER ─────────────────────────────────────────────────────── -->
 <footer>
-  <div class="footer-logo">1 Click Data Analysis</div>
+  <!-- Footer Logo -->
+  <div style="display:flex;flex-direction:column;align-items:center;gap:12px;margin-bottom:16px;">
+    <svg width="56" height="50" viewBox="0 0 200 176" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <defs><linearGradient id="fg1" x1="0%" y1="0%" x2="100%" y2="100%"><stop offset="0%" stop-color="#0ea5e9"/><stop offset="100%" stop-color="#a78bfa"/></linearGradient></defs>
+      <polygon points="100,6 170,46 170,130 100,170 30,130 30,46" fill="none" stroke="url(#fg1)" stroke-width="5" opacity="0.3"/>
+      <polyline points="42,120 62,88 82,98 112,58 142,42" fill="none" stroke="#0ea5e9" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="142" cy="42" r="10" fill="#38bdf8"/>
+      <rect x="42" y="130" width="12" height="18" rx="3" fill="#34d399" opacity="0.5"/>
+      <rect x="60" y="118" width="12" height="30" rx="3" fill="#34d399" opacity="0.7"/>
+      <text x="100" y="107" text-anchor="middle" font-family="Exo 2,sans-serif" font-size="52" fill="url(#fg1)" font-weight="900">1</text>
+    </svg>
+    <div style="font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;letter-spacing:-.02em;background:linear-gradient(135deg,#0ea5e9,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;">1 Click Data Analysis</div>
+    <div style="font-size:0.7rem;color:#1e3a5f;letter-spacing:0.15em;text-transform:uppercase;">Anyone Can Do Data Analysis</div>
+  </div>
   <p class="footer-text">
     Built by <strong>Pankaj Kumar Das</strong> &nbsp;·&nbsp;
-    <a href="mailto:pankajkxyz2018@gmail.com">pankajkxyz2018@gmail.com</a>
+    <a href="/cdn-cgi/l/email-protection#69190807020803021110135b595851290e04080005470a0604"><span class="__cf_email__" data-cfemail="fc8c9d92979d9697848586cecccdc4bc9b919d9590d29f9391">[email&#160;protected]</span></a>
     &nbsp;·&nbsp; © 2025 All rights reserved
   </p>
   <p style="font-size:.75rem;color:#334155;margin-top:8px">
@@ -1004,7 +1109,7 @@ footer{
   </p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // ── Scroll animations ────────────────────────────────────────────
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((e, i) => {
@@ -1045,25 +1150,4 @@ function animateCounter(el, target, suffix=''){
       current = target;
       clearInterval(timer);
     }
-    el.textContent = Math.floor(current) + suffix;
-  }, 20);
-}
-const statsObserver = new IntersectionObserver((entries) => {
-  entries.forEach(e => {
-    if(e.isIntersecting){
-      const nums = e.target.querySelectorAll('.stat-num');
-      nums.forEach(n => {
-        const text = n.textContent;
-        const num = parseInt(text);
-        const suffix = text.replace(num,'');
-        if(!isNaN(num)) animateCounter(n, num, suffix);
-      });
-      statsObserver.unobserve(e.target);
-    }
-  });
-}, { threshold: 0.5 });
-const heroStats = document.querySelector('.hero-stats');
-if(heroStats) statsObserver.observe(heroStats);
-</script>
-</body>
-</html>
+    el.textContent = Math.floor(
