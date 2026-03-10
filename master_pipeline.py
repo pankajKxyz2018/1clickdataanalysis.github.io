@@ -285,6 +285,22 @@ def detect_columns(df):
         "device":       ["device","device type","platform","os","browser","user agent","channel device"],
         "ship_mode":   ["ship mode","shipping mode","delivery mode","shipment type","ship method"],
         "segment":     ["customer segment","market segment","customer type","business segment"],
+        # ── Fraud ────────────────────────────────────────────────────────
+        "fraud_label":  ["class","label","fraud","is_fraud","isfraud","fraud_flag","fraudulent",
+                         "is_fraudulent","fraud_ind","fraud_indicator","suspicious","anomaly",
+                         "flagged","target","is fraud","fraud_label","label_class"],
+        "fraud_amount": ["transaction amount","trans amount","amount","step_amount","transaction value",
+                         "trans_amount","oldbalanceorg","newbalanceorig"],
+        "fraud_time":   ["step","time","timestamp","transaction time","trans_time","transaction_date",
+                         "trans_date"],
+        "fraud_type":   ["type","transaction type","trans_type","payment_type","fraud_type",
+                         "transaction_type","nameorig","namedest"],
+        "fraud_id":     ["transaction id","trans_id","transactionid","nameorig","step"],
+        "fraud_channel":["channel","device","medium","source","origin","fraud_channel"],
+        "fraud_loc":    ["merchant","location","terminal","merchant_name","merchant_category",
+                         "merchant_city","merchant_state"],
+        "fraud_score":  ["fraud_score","risk_score","anomaly_score","score","confidence",
+                         "probability","pred_proba","risk"],
     }
 
     # Pass 1: exact match
@@ -4571,7 +4587,6 @@ def render_advanced_dashboard(df, found, domain):
                     "line" : {"color": C["green"], "width": 3},
                     "thickness": 0.8, "value": 80
                 },
-                "shape": "angular",
             }
         ))
         fig_g1.update_layout(**cd(260), margin=dict(t=40,b=20,l=30,r=30))
@@ -4596,7 +4611,6 @@ def render_advanced_dashboard(df, found, domain):
                     {"range": [50, 75], "color": "rgba(245,158,11,0.12)"},
                     {"range": [75,100], "color": "rgba(16,185,129,0.12)"},
                 ],
-                "shape": "bullet",
             }
         ))
         fig_g2.update_layout(**cd(260), margin=dict(t=40,b=20,l=30,r=30))
@@ -4625,7 +4639,6 @@ def render_advanced_dashboard(df, found, domain):
                     {"range": [40, 70], "color": "rgba(245,158,11,0.12)"},
                     {"range": [70,100], "color": "rgba(16,185,129,0.12)"},
                 ],
-                "shape": "angular",
             }
         ))
         fig_g3.update_layout(**cd(260), margin=dict(t=40,b=20,l=30,r=30))
@@ -4995,6 +5008,15 @@ def main():
             "returns":     ("Returns / Refund Status",   all_c, "🏪 Retail"),
             "satisfaction":("Satisfaction / Rating",     num_c, "🏪 Retail"),
             "distribution_channel":("Distribution Channel", all_c, "🏪 Retail"),
+            # ── Fraud ────────────────────────────────────────────────────
+            "fraud_label":  ("Fraud Label / Class",          all_c, "🚨 Fraud"),
+            "fraud_amount": ("Transaction Amount",           num_c, "🚨 Fraud"),
+            "fraud_time":   ("Transaction Time / Date",      dt_c,  "🚨 Fraud"),
+            "fraud_type":   ("Transaction / Fraud Type",     all_c, "🚨 Fraud"),
+            "fraud_id":     ("Transaction ID",               all_c, "🚨 Fraud"),
+            "fraud_channel":("Channel / Device",             all_c, "🚨 Fraud"),
+            "fraud_loc":    ("Location / Merchant",          all_c, "🚨 Fraud"),
+            "fraud_score":  ("Risk Score / Anomaly Score",   num_c, "🚨 Fraud"),
         }
 
         # Which sections are relevant per domain
@@ -5004,7 +5026,7 @@ def main():
             "HR":        ["👥 HR",               "📅 Dimensions"],
             "Ecommerce": ["💼 Sales & Revenue",  "📅 Dimensions", "🏪 Retail"],
             "Retail":    ["💼 Sales & Revenue",  "📅 Dimensions", "🏪 Retail"],
-            "Fraud":     ["💼 Sales & Revenue",  "📅 Dimensions"],
+            "Fraud":     ["🚨 Fraud", "💼 Sales & Revenue",  "📅 Dimensions"],
             "Generic":   ["💼 Sales & Revenue",  "📅 Dimensions", "👥 HR",
                           "📣 Marketing",        "🏪 Retail"],
         }
