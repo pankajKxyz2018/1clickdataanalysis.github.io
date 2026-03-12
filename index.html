@@ -68,11 +68,12 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:fl
 /* VIDEO */
 .video-section{padding:80px 20px;text-align:center;position:relative;z-index:1;}
 .video-pill{display:inline-block;background:rgba(14,165,233,.08);border:1px solid rgba(14,165,233,.2);border-radius:100px;padding:6px 16px;font-size:.78rem;color:var(--blue);font-weight:600;margin-bottom:20px;}
-.video-title{font-family:'Clash Display',sans-serif;font-size:2rem;font-weight:700;margin-bottom:32px;}
-.video-container{max-width:800px;margin:0 auto;border-radius:20px;overflow:hidden;border:1px solid var(--border);background:var(--card);aspect-ratio:16/9;display:flex;align-items:center;justify-content:center;position:relative;}
-.video-placeholder{text-align:center;color:var(--muted);}
-.video-placeholder .play-btn{width:80px;height:80px;background:linear-gradient(135deg,var(--blue),var(--cyan));border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 16px;font-size:2rem;cursor:pointer;transition:transform .3s;}
-.video-placeholder .play-btn:hover{transform:scale(1.1);}
+.video-title{font-family:'Clash Display',sans-serif;font-size:2rem;font-weight:700;margin-bottom:12px;}
+.video-sub{font-size:.95rem;color:var(--muted);margin-bottom:32px;}
+.video-wrapper{max-width:860px;margin:0 auto;position:relative;border-radius:20px;overflow:hidden;border:1px solid rgba(14,165,233,.25);box-shadow:0 0 60px rgba(14,165,233,.12),0 20px 60px rgba(0,0,0,.6);}
+.video-wrapper video{display:block;width:100%;height:auto;background:#020817;}
+.video-chips{display:flex;justify-content:center;gap:10px;flex-wrap:wrap;margin-top:24px;}
+.video-chip{background:rgba(14,165,233,.06);border:1px solid rgba(14,165,233,.15);border-radius:100px;padding:6px 16px;font-size:.78rem;color:var(--muted);font-weight:500;}
 
 /* PIPELINE */
 .section{padding:100px 20px;position:relative;z-index:1;}
@@ -507,14 +508,26 @@ footer{padding:48px 20px 32px;text-align:center;border-top:1px solid var(--borde
 
 <!-- VIDEO -->
 <section class="video-section" id="demo">
-  <div class="video-pill">▶ Live Demo</div>
+  <div class="video-pill">&#9654; Live Demo</div>
   <h2 class="video-title">See It In Action</h2>
-  <div class="video-container">
-    <div class="video-placeholder">
-      <div class="play-btn">▶</div>
-      <p>Demo video coming soon</p>
-      <p style="font-size:.8rem;margin-top:8px;color:#334155">Upload → Analyse → Insights in 60 seconds</p>
-    </div>
+  <p class="video-sub">Upload any dataset &rarr; Full AI analysis in under 60 seconds &mdash; no setup, no coding.</p>
+  <div class="video-wrapper">
+    <video
+      controls
+      preload="metadata"
+      poster=""
+      style="border-radius:20px;"
+      aria-label="1 Click Data Analysis demo video">
+      <source src="1_Click_Data_Analysis_Demo_Video.mp4" type="video/mp4">
+      Your browser does not support HTML5 video.
+    </video>
+  </div>
+  <div class="video-chips">
+    <span class="video-chip">&#9989; No coding required</span>
+    <span class="video-chip">&#128202; Auto-detected domain</span>
+    <span class="video-chip">&#9889; 60 seconds to insight</span>
+    <span class="video-chip">&#129504; AI-powered analysis</span>
+    <span class="video-chip">&#128196; PDF report export</span>
   </div>
 </section>
 
