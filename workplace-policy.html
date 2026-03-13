@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Workplace Policy — 1 Click Data Analysis</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;500;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box;}
+:root{
+  --black:#040810;--dark:#080f1e;--card:#0d1829;--border:#1a2d4a;
+  --blue:#0ea5e9;--cyan:#06b6d4;--green:#10b981;--purple:#8b5cf6;
+  --text:#e2e8f0;--muted:#64748b;--white:#ffffff;
+}
+html{scroll-behavior:smooth;}
+body{background:var(--black);color:var(--text);font-family:'Cabinet Grotesk',sans-serif;line-height:1.6;overflow-x:hidden;}
+body::before{content:'';position:fixed;inset:0;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");pointer-events:none;z-index:0;opacity:.4;}
+.grid-bg{position:fixed;inset:0;background-image:linear-gradient(rgba(14,165,233,.04) 1px,transparent 1px),linear-gradient(90deg,rgba(14,165,233,.04) 1px,transparent 1px);background-size:60px 60px;pointer-events:none;z-index:0;}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:16px 40px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,8,16,.85);backdrop-filter:blur(20px);border-bottom:1px solid var(--border);}
+.nav-logo{display:flex;align-items:center;gap:10px;text-decoration:none;}
+.nav-logo-text{font-family:'Clash Display',sans-serif;font-size:1.15rem;font-weight:700;letter-spacing:-.02em;background:linear-gradient(135deg,#0ea5e9,#a78bfa);-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-logo-text span{-webkit-text-fill-color:#ffffff;}
+.nav-cta{background:linear-gradient(135deg,var(--blue),var(--cyan));color:#fff;padding:10px 24px;border-radius:100px;text-decoration:none;font-weight:700;font-size:.9rem;}
+
+/* HERO */
+.hero{padding:140px 20px 60px;text-align:center;position:relative;z-index:1;}
+.hero-pill{display:inline-flex;align-items:center;gap:8px;background:rgba(16,185,129,.08);border:1px solid rgba(16,185,129,.2);border-radius:100px;padding:6px 16px;font-size:.8rem;color:var(--green);font-weight:600;margin-bottom:24px;}
+.hero h1{font-family:'Clash Display',sans-serif;font-size:clamp(2.2rem,5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.03em;margin-bottom:16px;}
+.hero h1 span{background:linear-gradient(135deg,var(--blue),var(--cyan));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:520px;margin:0 auto;}
+
+/* CONTENT */
+.content{max-width:860px;margin:0 auto;padding:0 20px 100px;position:relative;z-index:1;}
+
+.policy-card{background:var(--card);border:1px solid var(--border);border-radius:20px;padding:40px;margin-bottom:24px;transition:border-color .3s;}
+.policy-card:hover{border-color:rgba(14,165,233,.3);}
+.policy-card.highlight{border-color:rgba(14,165,233,.3);background:linear-gradient(135deg,#0d1829,#0a1628);}
+
+.card-header{display:flex;align-items:center;gap:16px;margin-bottom:20px;}
+.card-icon{width:48px;height:48px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-size:1.4rem;flex-shrink:0;}
+.card-icon.blue{background:rgba(14,165,233,.12);border:1px solid rgba(14,165,233,.2);}
+.card-icon.green{background:rgba(16,185,129,.12);border:1px solid rgba(16,185,129,.2);}
+.card-icon.purple{background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.2);}
+.card-icon.orange{background:rgba(249,115,22,.12);border:1px solid rgba(249,115,22,.2);}
+
+.card-title{font-family:'Clash Display',sans-serif;font-size:1.2rem;font-weight:700;color:var(--white);}
+.card-subtitle{font-size:.82rem;color:var(--muted);margin-top:3px;}
+
+.card-body{font-size:.92rem;color:#94a3b8;line-height:1.75;}
+.card-body p{margin-bottom:14px;}
+.card-body p:last-child{margin-bottom:0;}
+.card-body strong{color:var(--text);font-weight:600;}
+
+/* Bullet list */
+.policy-list{list-style:none;display:flex;flex-direction:column;gap:10px;margin-top:4px;}
+.policy-list li{display:flex;align-items:flex-start;gap:12px;font-size:.9rem;color:#94a3b8;line-height:1.5;}
+.policy-list li::before{content:'→';color:var(--blue);flex-shrink:0;margin-top:1px;}
+
+/* Effective date bar */
+.effective-bar{background:rgba(16,185,129,.06);border:1px solid rgba(16,185,129,.15);border-radius:12px;padding:16px 24px;display:flex;align-items:center;gap:12px;margin-bottom:32px;font-size:.85rem;color:#6ee7b7;}
+.effective-bar span{color:var(--muted);}
+
+/* Contact box */
+.contact-box{background:linear-gradient(135deg,rgba(14,165,233,.08),rgba(139,92,246,.05));border:1px solid rgba(14,165,233,.2);border-radius:16px;padding:28px 32px;text-align:center;margin-top:40px;}
+.contact-box h3{font-family:'Clash Display',sans-serif;font-size:1.1rem;font-weight:700;margin-bottom:8px;}
+.contact-box p{font-size:.88rem;color:var(--muted);margin-bottom:16px;}
+.contact-box a{color:var(--blue);text-decoration:none;font-weight:600;}
+
+/* Footer */
+footer{padding:32px 20px;text-align:center;border-top:1px solid var(--border);position:relative;z-index:1;}
+.footer-text{font-size:.8rem;color:var(--muted);}
+.footer-text a{color:var(--blue);text-decoration:none;}
+
+@media(max-width:768px){
+  nav{padding:16px 20px;}
+  .hero{padding:100px 20px 40px;}
+  .policy-card{padding:24px 20px;}
+}
+</style>
+</head>
+<body>
+<div class="grid-bg"></div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="index.html">
+    <img src="logo.png" alt="1 Click Data Analysis" height="36" style="display:block;">
+  </a>
+  <a class="nav-cta" href="https://agenticaidataanalyst-zhhfnymmohv3pcmunyq4mn.streamlit.app" target="_blank">🚀 Try Free</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-pill">🌍 Remote-First Company</div>
+  <h1>Our <span>Workplace Policy</span></h1>
+  <p class="hero-sub">How we work, where we work, and what we stand for — as a team.</p>
+</section>
+
+<!-- CONTENT -->
+<div class="content">
+
+  <div class="effective-bar">
+    ✅ <strong>Effective:</strong>&nbsp;<span>January 2024 &nbsp;·&nbsp; 1 Click Data Analysis &nbsp;·&nbsp; Version 1.0</span>
+  </div>
+
+  <!-- Remote Work -->
+  <div class="policy-card highlight">
+    <div class="card-header">
+      <div class="card-icon blue">🌍</div>
+      <div>
+        <div class="card-title">100% Remote Work</div>
+        <div class="card-subtitle">Work from anywhere in India</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>1 Click Data Analysis is a fully remote company. There is no fixed office. Every team member — current and future — works from their preferred location, whether that's home, a co-working space, or anywhere else they choose.</p>
+      <ul class="policy-list">
+        <li>No mandatory office attendance — ever</li>
+        <li>All collaboration happens asynchronously through digital tools</li>
+        <li>Team members across any city or state in India are welcome</li>
+        <li>Equipment and connectivity are the responsibility of the individual</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Flexible Hours -->
+  <div class="policy-card">
+    <div class="card-header">
+      <div class="card-icon green">⏰</div>
+      <div>
+        <div class="card-title">Flexible Working Hours</div>
+        <div class="card-subtitle">Results over clock-watching</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>We don't track hours. We track outcomes. Team members are free to structure their day as they see fit, as long as they meet their commitments and communicate proactively.</p>
+      <ul class="policy-list">
+        <li>No fixed start or end time</li>
+        <li>Core overlap window: 11am–4pm IST for real-time collaboration when needed</li>
+        <li>Deadlines and deliverables take priority over schedules</li>
+        <li>Personal commitments and time zones are respected</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Async First -->
+  <div class="policy-card">
+    <div class="card-header">
+      <div class="card-icon purple">💬</div>
+      <div>
+        <div class="card-title">Async-First Communication</div>
+        <div class="card-subtitle">Fewer meetings, more focus</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>We believe deep work is the source of our best output. Meetings are the last resort, not the first. Written communication — clear, direct, and documented — is how we operate.</p>
+      <ul class="policy-list">
+        <li>Default to written updates and documented decisions</li>
+        <li>No unnecessary meetings — every call has a clear agenda</li>
+        <li>Response time expectation: within 4 business hours</li>
+        <li>All important decisions are documented in writing</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Ownership & Autonomy -->
+  <div class="policy-card">
+    <div class="card-header">
+      <div class="card-icon orange">🚀</div>
+      <div>
+        <div class="card-title">Full Ownership & Autonomy</div>
+        <div class="card-subtitle">Move fast, take responsibility</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>We are a lean, fast-moving startup. Every person owns their work end-to-end — from planning to execution to quality. We hire for self-direction and trust people to deliver without micromanagement.</p>
+      <ul class="policy-list">
+        <li>Every team member is the owner of their domain</li>
+        <li>Proactive communication is expected — no waiting to be asked</li>
+        <li>Mistakes are learning opportunities — honesty is valued over perfection</li>
+        <li>Initiative is celebrated; asking for permission is not the culture</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Equal Opportunity -->
+  <div class="policy-card">
+    <div class="card-header">
+      <div class="card-icon blue">🤝</div>
+      <div>
+        <div class="card-title">Equal Opportunity & Inclusion</div>
+        <div class="card-subtitle">Merit above everything else</div>
+      </div>
+    </div>
+    <div class="card-body">
+      <p>1 Click Data Analysis is an equal opportunity organisation. We do not discriminate on the basis of gender, religion, caste, ethnicity, disability, age, or any other personal characteristic. All hiring, compensation, and growth decisions are based solely on skills, work quality, and contribution.</p>
+      <ul class="policy-list">
+        <li>Zero tolerance for discrimination or harassment of any kind</li>
+        <li>All voices are heard — seniority doesn't silence input</li>
+        <li>Pay is based on role and contribution, not background</li>
+        <li>Inclusive and respectful communication is non-negotiable</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-box">
+    <h3>Questions About This Policy?</h3>
+    <p>Reach out directly — we're always happy to clarify.</p>
+    <a href="mailto:pankaj@1clickdataanalysis.com">📧 pankaj@1clickdataanalysis.com</a>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-text">
+    © 2024 1 Click Data Analysis &nbsp;·&nbsp;
+    <a href="index.html">Home</a> &nbsp;·&nbsp;
+    <a href="terms.html">Terms</a> &nbsp;·&nbsp;
+    <a href="privacy.html">Privacy</a> &nbsp;·&nbsp;
+    <a href="mailto:pankaj@1clickdataanalysis.com">Contact</a>
+  </div>
+</footer>
+
+</body>
+</html>
