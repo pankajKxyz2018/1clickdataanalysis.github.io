@@ -394,14 +394,10 @@ nav {
   position: relative; z-index: 1;
 }
 .founder-card {
-  background: var(--card); 
-  border: 1px solid var(--border);
-  border-radius: 24px; 
-  padding: 48px;
-  display: grid; 
-  grid-template-columns: 240px 1fr;
-  gap: 48px; 
-  align-items: start;
+  background: var(--card); border: 1px solid var(--border);
+  border-radius: 24px; padding: 48px;
+  display: grid; grid-template-columns: 240px 1fr;
+  gap: 48px; align-items: start;
 }
 .founder-photo-block { text-align: center; }
 .founder-photo {
@@ -460,6 +456,14 @@ footer {
 .fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 </style>
+<!-- Google Analytics GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
 </head>
 <body>
 
@@ -768,64 +772,32 @@ footer {
 
 <!-- Founder Section -->
 <section class="founder-section fade-up">
-
   <div class="mvv-header" style="text-align:center;margin-bottom:40px;">
     <div class="section-eyebrow">// The Builder</div>
     <h2 class="section-title">Meet the Founder</h2>
   </div>
-
   <div class="founder-card">
-
-```
-<!-- LEFT SIDE -->
-<div class="founder-photo-block">
-
-  <img src="pankaj.jpeg" class="founder-photo">
-
-  <div class="founder-title">Pankaj Kumar Das</div>
-  <div class="founder-sub">Founder · Vibe Coder · Solo Builder</div>
-
-  <div class="founder-tags">
-    <span class="ftag">7+ yrs NLP</span>
-    <span class="ftag">AI/LLM Dev</span>
-    <span class="ftag">SaaS Builder</span>
-    <span class="ftag">Kolkata 🇮🇳</span>
-  </div>
-
-  <div class="social-links" style="justify-content:center;margin-top:16px;">
-    <a class="social-link" href="https://linkedin.com/in/pankajkrdas" target="_blank">💼 LinkedIn</a>
-    <a class="social-link" href="mailto:pankaj@1clickdataanalysis.com">✉️ Email</a>
-    <a class="social-link" href="https://www.instagram.com/1_clickdataanalysis/" target="_blank">📷 Instagram</a>
-    <a class="social-link" href="https://www.youtube.com/@1_click_data_analysis" target="_blank">▶ YouTube</a>
-    <a class="social-link" href="https://1clickdataanalysis.com/about.html" target="_blank">🌐 Website</a>
-  </div>
-
-</div>
-
-
-<!-- RIGHT SIDE TEXT -->
-<div class="founder-story">
-
-  <div class="founder-story-label">// IN HIS OWN WORDS</div>
-
-  <p>
-  I am not a traditional software developer. I am a <strong>domain expert who learned to build software using AI</strong> — what the tech world now calls a <span class="hl">Vibe Coder</span>. My 7+ years in NLP and AI Data Operations gave me deep understanding of what businesses actually need from their data.
-  </p>
-
-  <p>
-  I built 1 Click Data Analysis <strong>entirely using AI-assisted development</strong> — Claude AI, Python, Streamlit, and Supabase. Every feature was designed from the perspective of a business user, not an engineer. Because I've sat in those meetings where the data analyst says "it'll be ready next week" and the decision can't wait.
-  </p>
-
-  <p>
-  <strong>This product is my answer to that problem.</strong> Built solo. Launched from Kolkata. Priced for Indian businesses. But designed to work for any business, anywhere in the world.
-  </p>
-
-</div>
-```
-
-  </div>
-
-</section>
+    <div class="founder-photo-block">
+      <div class="founder-photo">P</div>
+      <div class="founder-title">Pankaj Kumar Das</div>
+      <div class="founder-sub">Founder · Vibe Coder · Solo Builder</div>
+      <div class="founder-tags">
+        <span class="ftag">7+ yrs NLP</span>
+        <span class="ftag">AI/LLM Dev</span>
+        <span class="ftag">SaaS Builder</span>
+        <span class="ftag">Kolkata 🇮🇳</span>
+      </div>
+      <div class="social-links" style="justify-content:center;margin-top:16px;">
+        <a class="social-link" href="https://linkedin.com/in/pankajkrdas" target="_blank">💼 LinkedIn</a>
+        <a class="social-link" href="/cdn-cgi/l/email-protection#7202131c1913183243111e1b111916130613131c131e0b011b015c111d1f">✉️ Email</a>
+      </div>
+    </div>
+    <div class="founder-story">
+      <div class="founder-story-label">// In His Own Words</div>
+      <p>I am not a traditional software developer. I am a <strong>domain expert who learned to build software using AI</strong> — what the tech world now calls a <span class="hl">Vibe Coder</span>. My 7+ years in NLP and AI Data Operations gave me deep understanding of what businesses actually need from their data.</p>
+      <p>I built 1 Click Data Analysis <strong>entirely using AI-assisted development</strong> — Claude AI, Python, Streamlit, and Supabase. Every feature was designed from the perspective of a business user, not an engineer. Because I've sat in those meetings where the data analyst says "it'll be ready next week" and the decision can't wait.</p>
+      <p><strong>This product is my answer to that problem.</strong> Built solo. Launched from Kolkata. Priced for Indian businesses. But designed to work for any business, anywhere in the world.</p>
+    </div>
   </div>
 </section>
 
@@ -842,7 +814,7 @@ footer {
   <p class="footer-copy">© 2025 1 Click Data Analysis · Built by Pankaj Kumar Das · Kolkata, India 🇮🇳</p>
 </footer>
 
-<script>
+<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
 // Scroll-based fade-up animation
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -851,9 +823,3 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(e.target);
     }
   });
-}, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
-
-document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
-</script>
-</body>
-</html>
