@@ -429,6 +429,39 @@ nav {
 .founder-story p .hl { color: var(--blue); font-weight: 600; }
 .social-links { display: flex; gap: 12px; margin-top: 24px; flex-wrap: wrap; }
 .social-link {
+  display: inline-flex; align-items: center; gap: 7px;
+  padding: 8px 16px; border-radius: 10px; font-size: 0.82rem;
+  font-weight: 600; text-decoration: none; transition: all 0.2s;
+  border: 1px solid var(--border);
+  background: var(--card); color: var(--subtle);
+}
+.social-link:hover { transform: translateY(-2px); }
+.social-link.linkedin  { border-color: #0a66c244; color: #0a66c2; background: #0a66c210; }
+.social-link.linkedin:hover  { background: #0a66c222; }
+.social-link.youtube   { border-color: #ff000044; color: #ff4444; background: #ff000010; }
+.social-link.youtube:hover   { background: #ff000022; }
+.social-link.instagram { border-color: #e1306c44; color: #e1306c; background: #e1306c10; }
+.social-link.instagram:hover { background: #e1306c22; }
+.social-link.email     { border-color: #0ea5e944; color: #0ea5e9; background: #0ea5e910; }
+.social-link.email:hover     { background: #0ea5e922; }
+.founder-photo-wrap {
+  position: relative; display: inline-block; margin-bottom: 16px;
+}
+.founder-photo-img {
+  width: 160px; height: 160px; border-radius: 20px;
+  object-fit: cover; object-position: center top;
+  border: 2px solid #4f8ef744;
+  display: block;
+}
+.founder-photo-fallback {
+  width: 160px; height: 160px; border-radius: 20px;
+  background: linear-gradient(135deg, #4f8ef730, #7c3aed30);
+  border: 2px solid #4f8ef744;
+  display: flex; align-items: center; justify-content: center;
+  font-family: 'Syne', sans-serif; font-weight: 800;
+  font-size: 3rem; color: var(--blue);
+}
+.social-link {
   display: flex; align-items: center; gap: 6px;
   background: #1a3050; color: var(--subtle);
   padding: 7px 14px; border-radius: 8px;
@@ -453,7 +486,7 @@ footer {
   from { opacity: 0; transform: translateY(24px); }
   to   { opacity: 1; transform: translateY(0); }
 }
-.fade-up { opacity: 0; transform: translateY(24px); transition: opacity 0.6s ease, transform 0.6s ease; }
+.fade-up { opacity: 1; transform: translateY(0); transition: opacity 0.6s ease, transform 0.6s ease; }
 .fade-up.visible { opacity: 1; transform: translateY(0); }
 </style>
 <!-- Google Analytics GA4 -->
@@ -778,7 +811,15 @@ footer {
   </div>
   <div class="founder-card">
     <div class="founder-photo-block">
-      <div class="founder-photo">P</div>
+      <div class="founder-photo-wrap">
+        <img
+          class="founder-photo-img"
+          src="pankaj_photo.jpg"
+          alt="Pankaj Kumar Das — Founder, 1 Click Data Analysis"
+          onerror="this.style.display='none';this.nextElementSibling.style.display='flex';"
+        />
+        <div class="founder-photo-fallback" style="display:none;">P</div>
+      </div>
       <div class="founder-title">Pankaj Kumar Das</div>
       <div class="founder-sub">Founder · Vibe Coder · Solo Builder</div>
       <div class="founder-tags">
@@ -787,9 +828,27 @@ footer {
         <span class="ftag">SaaS Builder</span>
         <span class="ftag">Kolkata 🇮🇳</span>
       </div>
-      <div class="social-links" style="justify-content:center;margin-top:16px;">
-        <a class="social-link" href="https://linkedin.com/in/pankajkrdas" target="_blank">💼 LinkedIn</a>
-        <a class="social-link" href="/cdn-cgi/l/email-protection#7202131c1913183243111e1b111916130613131c131e0b011b015c111d1f">✉️ Email</a>
+      <div class="social-links" style="justify-content:center;margin-top:20px;flex-direction:column;align-items:center;gap:10px;">
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+          <a class="social-link linkedin" href="https://linkedin.com/in/pankajkrdas" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+            LinkedIn
+          </a>
+          <a class="social-link email" href="mailto:pankaj@1clickdataanalysis.com">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+            Email
+          </a>
+        </div>
+        <div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:center;">
+          <a class="social-link youtube" href="https://www.youtube.com/@1_click_data_analysis" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M23.495 6.205a3.007 3.007 0 0 0-2.088-2.088c-1.87-.501-9.396-.501-9.396-.501s-7.507-.01-9.396.501A3.007 3.007 0 0 0 .527 6.205a31.247 31.247 0 0 0-.522 5.805 31.247 31.247 0 0 0 .522 5.783 3.007 3.007 0 0 0 2.088 2.088c1.868.502 9.396.502 9.396.502s7.506 0 9.396-.502a3.007 3.007 0 0 0 2.088-2.088 31.247 31.247 0 0 0 .5-5.783 31.247 31.247 0 0 0-.5-5.805zM9.609 15.601V8.408l6.264 3.602z"/></svg>
+            YouTube
+          </a>
+          <a class="social-link instagram" href="https://www.instagram.com/1_clickdataanalysis/" target="_blank">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+            Instagram
+          </a>
+        </div>
       </div>
     </div>
     <div class="founder-story">
@@ -814,7 +873,7 @@ footer {
   <p class="footer-copy">© 2025 1 Click Data Analysis · Built by Pankaj Kumar Das · Kolkata, India 🇮🇳</p>
 </footer>
 
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+<script>
 // Scroll-based fade-up animation
 const observer = new IntersectionObserver((entries) => {
   entries.forEach(e => {
@@ -823,3 +882,8 @@ const observer = new IntersectionObserver((entries) => {
       observer.unobserve(e.target);
     }
   });
+}, { threshold: 0.1 });
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
+</body>
+</html>
